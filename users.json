@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "Rafael brito de lima",
+        "dateBirth": "25/10/1986",
+        "sex": "male",
+        "cpf": "76947788226",
+        "email": "Sincere@april.biz",
+        "phone": "11 982785412",
+        "address": {
+            "street": "Kulas Light",
+            "number": "556",
+            "city": "Gwenborough",
+            "cep": "92998-3874"
+        }
+    },
+    {
+        "id": 1,
+        "name": "Silas alcantara",
+        "dateBirth": "05/08/1980",
+        "sex": "male",
+        "cpf": "76947788226",
+        "email": "Sincere@april.biz",
+        "phone": "11 983788412",
+        "address": {
+            "street": "São bernardo do campo",
+            "number": "55",
+            "city": "Gwenborough",
+            "cep": "92998-3874"
+        }
+    },
+    {
+        "id": 1,
+        "name": "Isabela Graham",
+        "dateBirth": "25/10/1986",
+        "sex": "Female",
+        "cpf": "76947788226",
+        "email": "Sincere@april.biz",
+        "phone": "11 982785412",
+        "address": {
+            "street": "Kulas Light",
+            "number": "Apt. 556",
+            "city": "Gwenborough",
+            "cep": "92998-2004"
+        }
+    },
+    {
+        "id": 1,
+        "name": "Michelle Graham",
+        "dateBirth": "25/10/1996",
+        "sex": "Female",
+        "cpf": "76947788226",
+        "email": "Sincere@april.biz",
+        "phone": "11 982785412",
+        "address": {
+            "street": "Kulas Light",
+            "number": "Apt. 556",
+            "city": "Gwenborough",
+            "cep": "92998-3874"
+        }
+    }
+]
