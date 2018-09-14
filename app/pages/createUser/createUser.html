@@ -1,1 +1,185 @@
-<h1>Crie o Formulário de cadastro de usuario aqui.</h1>
+<header>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluent">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                    aria-controls="navbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img height="25" src="bc_logo.png" alt="">
+                </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li class="active">
+                        <a href="#/create-user">Cadastro de Usuário</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="page-test-front-end">
+        <div class="jumbotron">
+            <h2 class="page-title text-center">
+                Cadastro de Usuário
+            </h2>
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Informações de Cadastro
+                        </div>
+                        <div class="panel-body">
+                            <form name="userRegister">
+                                <div class="form-group">
+                                    <label for="nome">Nome</label>
+                                    <input type="text" class="form-control" name="nome" placeholder="Digite seu nome">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">E-mail</label>
+                                    <input type="email" class="form-control" name="email" placeholder="Digite seu e-mail">
+                                </div>
+                                <h3 class="form-item-title">Informações Pessoais</h3>
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-6">
+                                        <div class="form-group">
+                                            <label for="cpf">CPF</label>
+                                            <input type="text" class="form-control" name="cpf" placeholder="___.___.___-__">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="dataNascimento">Data de nascimento</label>
+                                            <input type="text" class="form-control" name="dataNascimento" placeholder="__/__/____">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="sexo">Sexo</label>
+                                            <select class="form-control" name="sexo">
+                                                <option value="M">Masculino</option>
+                                                <option value="F">Feminino</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-6">
+                                        <div class="form-group">
+                                            <label for="telefone">Telefone</label>
+                                            <input type="text" class="form-control" name="telefone" placeholder="(__)____-____">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="celular">Celular</label>
+                                            <input type="text" class="form-control" name="celular" placeholder="(__)_____-____">
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="form-item-title">Informações de Endereço</h3>
+                                <div class="row">
+                                    <div class="col-sm-9">
+                                        <div class="form-group">
+                                            <label for="telefone">Endereço</label>
+                                            <input type="text" class="form-control" name="endereço" placeholder="Digite seu endereço">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                      <div class="form-group">
+                                          <label for="numero">Número</label>
+                                          <input type="text" class="form-control" name="numero" placeholder="_____">
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="complemento">Complemento</label>
+                                    <input type="text" class="form-control" name="complemento" placeholder="Digite o complemento">
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-9">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="bairro">Bairro</label>
+                                                    <input type="text" class="form-control" name="bairro" placeholder="Digite o bairro">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="cidade">Cidade</label>
+                                                    <input type="text" class="form-control" name="cidade" placeholder="Digite a cidade">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label for="estado">Estado</label>
+                                            <input type="text" class="form-control" name="estado" placeholder="__">
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-8">
+
+                                    </div>
+                                    <div class="col-sm-4">
+                                      <div class="form-group">
+                                          <input type="submit" class="form-control btn btn-success" name="submit" value="Enviar">
+                                      </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Resultados
+                        </div>
+                        <div class="panel-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">Nome</th>
+                                        <th scope="col">Telefone</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>
+                                            <a href="#" class="icon-remove text-center">
+                                                +
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>@fat</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>@twitter</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
