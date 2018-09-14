@@ -14,14 +14,26 @@
 
 .icon-remove {
     background: #dc3545;
-    border-radius: 15px;
+    border-radius: 18px;
     line-height: 1;
     color: #FFF;
     font-weight: 700;
     font-size: 18px;
     display: block;
-    width: 19px;
+    width: 18px;
+    height: 18px;
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
     transform: rotate(45deg);
+}
+
+.icon-remove:hover {
+   background: #00BC9C;
+   text-decoration: none;
+   color: #FFF;
+}
+
+.jumbotron p {
+    font-size: 12px;
+    margin-bottom: 0;
 }

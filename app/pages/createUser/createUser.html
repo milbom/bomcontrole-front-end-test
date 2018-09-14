@@ -26,8 +26,8 @@
     </nav>
 </header>
 
-<div class="container">
-    <div class="page-test-front-end">
+<div class="container"ng-app="bomControle">
+    <div class="page-test-front-end" ng-controller="createUserController">
         <div class="jumbotron">
             <h2 class="page-title text-center">
                 Cadastro de Usuário
@@ -79,6 +79,14 @@
                                     </div>
                                 </div>
                                 <h3 class="form-item-title">Informações de Endereço</h3>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="cep">CEP</label>
+                                            <input type="text" class="form-control" name="cep" placeholder="_____-___">
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="row">
                                     <div class="col-sm-9">
                                         <div class="form-group">
@@ -152,30 +160,24 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
+                                    <tr ng-repeat="(key, usuario) in usuarios">
+                                        <th scope="row">{{key}}</th>
+                                        <td>{{usuario.nome}}</td>
+                                        <td>{{usuario.telefone}}</td>
                                         <td>
                                             <a href="#" class="icon-remove text-center">
                                                 +
                                             </a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Larry</td>
-                                        <td>the Bird</td>
-                                        <td>@twitter</td>
-                                    </tr>
                                 </tbody>
-                            </table>
+                            </table>                            
+                            <h3 class="form-item-title">Lista completa</h3>
+                            <ul class="list-group">
+                                <li class="list-group-item" ng-repeat="usuario in usuarios">
+                                    <p>{{usuario}}</p>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
