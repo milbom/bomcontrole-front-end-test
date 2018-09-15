@@ -1,17 +1,17 @@
 (function () {
     "use strict";
     angular.module('bomControle')
-        .controller('createUserController', ['$scope', function ($scope) {
+        .controller('createUserController', ['$scope', function ($scope, userHttpServices) {
             $scope.usuarios = [
                 {
                     nome: "Pedro Henrique",
                     email: "pedro_henrique_01@gmail.com",
-                    cpf: "859.079.650-70",
-                    dataNascimento: "16/10/1957",
-                    Sexo: "M",
-                    telefone: "(11)1234-5678",
-                    celular: "(11)96328-9652",
-                    cep: "49082-490",
+                    cpf: "85907965070",
+                    dataNascimento: "1957-10-16",
+                    sexo: "M",
+                    telefone: "1112345678",
+                    celular: "11963289652",
+                    cep: "49082490",
                     endereco: "Rua Sargento Lauro José",
                     bairro: "Novo Paraíso",
                     cidade: "Aracaju",
@@ -20,17 +20,26 @@
                 {
                     nome: "Maria Clara",
                     email: "maria.clara@hotmail.com",
-                    cpf: "328.831.730-36",
-                    dataNascimento: "21/04/1986",
-                    Sexo: "F",
-                    telefone: "(13)3214-7896",
-                    celular: "(13)97418-5296",
-                    cep: "59614-840",
+                    cpf: "32883173036",
+                    dataNascimento: "1986-04-21",
+                    sexo: "F",
+                    telefone: "1332147896",
+                    celular: "13974185296",
+                    cep: "59614840",
                     endereco: "Rua Nossa Senhora de Lourdes",
                     bairro: "Santa Delmira",
                     cidade: "Mossoró",
                     estado:  "RN"
                 },
             ];
+
+            $scope.delete = function (usuario) {
+                $.each($scope.usuarios, function(i){
+                    if($scope.usuarios[i].nome === usuario.nome) {
+                        $scope.usuarios.splice(i,1);
+                        return false;
+                    }
+                });
+      			};
         }]);
 })();

@@ -30,6 +30,7 @@
 .icon-remove:hover {
    background: #00BC9C;
    text-decoration: none;
+   cursor: pointer;
    color: #FFF;
 }
 

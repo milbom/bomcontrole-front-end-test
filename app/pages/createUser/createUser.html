@@ -33,7 +33,7 @@
                 Cadastro de Usuário
             </h2>
             <div class="row">
-                <div class="col-sm-12 col-md-6">
+                <div class="col-sm-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             Informações de Cadastro
@@ -42,26 +42,26 @@
                             <form name="userRegister">
                                 <div class="form-group">
                                     <label for="nome">Nome</label>
-                                    <input type="text" class="form-control" name="nome" placeholder="Digite seu nome">
+                                    <input type="text" class="form-control" name="nome" placeholder="Digite seu nome" ng-model="usuario.nome" ng-required="true">
                                 </div>
                                 <div class="form-group">
                                     <label for="email">E-mail</label>
-                                    <input type="email" class="form-control" name="email" placeholder="Digite seu e-mail">
+                                    <input type="email" class="form-control" name="email" placeholder="Digite seu e-mail" ng-model="usuario.email" ng-required="true">
                                 </div>
                                 <h3 class="form-item-title">Informações Pessoais</h3>
                                 <div class="row">
                                     <div class="col-sm-12 col-md-6">
                                         <div class="form-group">
                                             <label for="cpf">CPF</label>
-                                            <input type="text" class="form-control" name="cpf" placeholder="___.___.___-__">
+                                            <input type="text" class="form-control" name="cpf" placeholder="___.___.___-__"  ng-model="usuario.cpf" ng-required="true" ui-br-cpf-mask>
                                         </div>
                                         <div class="form-group">
                                             <label for="dataNascimento">Data de nascimento</label>
-                                            <input type="text" class="form-control" name="dataNascimento" placeholder="__/__/____">
+                                            <input type="text" class="form-control" name="dataNascimento" placeholder="__/__/____"  ng-model="usuario.dataNascimento" ng-required="true">
                                         </div>
                                         <div class="form-group">
                                             <label for="sexo">Sexo</label>
-                                            <select class="form-control" name="sexo">
+                                            <select class="form-control" name="sexo" ng-model="usuario.sexo" ng-init="usuario.sexo = 'M'">
                                                 <option value="M">Masculino</option>
                                                 <option value="F">Feminino</option>
                                             </select>
@@ -70,73 +70,73 @@
                                     <div class="col-sm-12 col-md-6">
                                         <div class="form-group">
                                             <label for="telefone">Telefone</label>
-                                            <input type="text" class="form-control" name="telefone" placeholder="(__)____-____">
+                                            <input type="text" class="form-control" name="telefone" placeholder="(__)____-____" ng-model="usuario.telefone" ui-br-phone-number>
                                         </div>
                                         <div class="form-group">
                                             <label for="celular">Celular</label>
-                                            <input type="text" class="form-control" name="celular" placeholder="(__)_____-____">
+                                            <input type="text" class="form-control" name="celular" placeholder="(__)_____-____" ng-model="usuario.celular" ui-br-phone-number>
                                         </div>
                                     </div>
                                 </div>
                                 <h3 class="form-item-title">Informações de Endereço</h3>
                                 <div class="row">
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-4">
                                         <div class="form-group">
                                             <label for="cep">CEP</label>
-                                            <input type="text" class="form-control" name="cep" placeholder="_____-___">
+                                            <input type="text" class="form-control" name="cep" placeholder="_____-___" ng-model="usuario.cep" ui-br-cep-mask>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-9">
+                                    <div class="col-sm-10">
                                         <div class="form-group">
-                                            <label for="telefone">Endereço</label>
-                                            <input type="text" class="form-control" name="endereço" placeholder="Digite seu endereço">
+                                            <label for="endereco">Endereço</label>
+                                            <input type="text" class="form-control" name="endereco" placeholder="Digite seu endereço" ng-model="usuario.endereco">
                                         </div>
                                     </div>
-                                    <div class="col-sm-3">
+                                    <div class="col-sm-2">
                                       <div class="form-group">
                                           <label for="numero">Número</label>
-                                          <input type="text" class="form-control" name="numero" placeholder="_____">
+                                          <input type="text" class="form-control" name="numero" placeholder="_____" ng-model="usuario.numero" ui-number-mask="0">
                                       </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="complemento">Complemento</label>
-                                    <input type="text" class="form-control" name="complemento" placeholder="Digite o complemento">
+                                    <input type="text" class="form-control" name="complemento" placeholder="Digite o complemento" ng-model="usuario.complemento">
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-9">
+                                    <div class="col-sm-10">
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <div class="form-group">
                                                     <label for="bairro">Bairro</label>
-                                                    <input type="text" class="form-control" name="bairro" placeholder="Digite o bairro">
+                                                    <input type="text" class="form-control" name="bairro" placeholder="Digite o bairro" ng-model="usuario.bairro">
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="form-group">
                                                     <label for="cidade">Cidade</label>
-                                                    <input type="text" class="form-control" name="cidade" placeholder="Digite a cidade">
+                                                    <input type="text" class="form-control" name="cidade" placeholder="Digite a cidade" ng-model="usuario.cidade">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-3">
+                                    <div class="col-sm-2">
                                         <div class="form-group">
                                             <label for="estado">Estado</label>
-                                            <input type="text" class="form-control" name="estado" placeholder="__">
+                                            <input type="text" class="form-control" name="estado" placeholder="__" ui-br-ie-mask='selectedUF' ng-model="usuario.estado">
                                         </div>
                                     </div>
                                 </div>
                                 <hr>
                                 <div class="row">
-                                    <div class="col-sm-8">
-
-                                    </div>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-9"></div>
+                                    <div class="col-sm-3">
                                       <div class="form-group">
-                                          <input type="submit" class="form-control btn btn-success" name="submit" value="Enviar">
+                                          <button class="form-control btn btn-success btn-block" ng-click="adicionar(usuario)" ng-disabled="userRegister.$invalid">
+                                              Cadastrar
+                                          </button>
                                       </div>
                                     </div>
                                 </div>
@@ -144,40 +144,42 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-6">
+                <div class="col-sm-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             Resultados
                         </div>
                         <div class="panel-body">
+                            <div class="form-group">
+                                <label for="busca">Busca rápida:</label>
+                                <input type="text" class="form-control" name="busca" ng-model="busca" placeholder="Digite algo para buscar">
+                            </div>
                             <table class="table">
                                 <thead>
                                     <tr>
                                         <th scope="col"></th>
                                         <th scope="col">Nome</th>
+                                        <th scope="col">E-mail</th>
+                                        <th scope="col">CPF</th>
+                                        <th scope="col">Data nasc.</th>
+                                        <th scope="col">Sexo</th>
                                         <th scope="col">Telefone</th>
                                         <th scope="col"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr ng-repeat="(key, usuario) in usuarios">
+                                    <tr ng-repeat="(key, usuario) in usuarios | filter:busca">
                                         <th scope="row">{{key}}</th>
                                         <td>{{usuario.nome}}</td>
-                                        <td>{{usuario.telefone}}</td>
-                                        <td>
-                                            <a href="#" class="icon-remove text-center">
-                                                +
-                                            </a>
-                                        </td>
+                                        <td>{{usuario.email}}</td>
+                                        <td>{{usuario.cpf | cpf}}</td>
+                                        <td>{{usuario.dataNascimento | date : "dd/MM/y"}}</td>
+                                        <td>{{usuario.sexo}}</td>
+                                        <td>{{usuario.telefone | telefone}}</td>
+                                        <td><i ng-click="delete(usuario)" class="icon-remove text-center">+</i></td>
                                     </tr>
                                 </tbody>
-                            </table>                            
-                            <h3 class="form-item-title">Lista completa</h3>
-                            <ul class="list-group">
-                                <li class="list-group-item" ng-repeat="usuario in usuarios">
-                                    <p>{{usuario}}</p>
-                                </li>
-                            </ul>
+                            </table>
                         </div>
                     </div>
                 </div>
