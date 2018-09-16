@@ -41,8 +41,8 @@
                         <div class="panel-body">
                             <form name="userRegister">
                                 <div class="form-group">
-                                    <label for="nome" class="required">Nome</label>
-                                    <input type="text" class="form-control" name="nome" placeholder="Digite seu nome" ng-model="usuario.nome" ng-required="true">
+                                    <label for="name" class="required">Nome</label>
+                                    <input type="text" class="form-control" name="name" placeholder="Digite seu nome" ng-model="usuario.name" ng-required="true">
                                 </div>
                                 <div class="form-group">
                                     <label for="email"  class="required">E-mail</label>
@@ -69,30 +69,30 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="dataNascimento" class="required">Data de nascimento</label>
-                                            <input type="text" class="form-control" name="dataNascimento" placeholder="__/__/____"  ng-model="usuario.dataNascimento" ng-required="true" ui-date-mask  ng-pattern="/^\d{2}/\d{2}/\d{4}$/">
-                                            <div ng-messages="userRegister.dataNascimento.$error">
+                                            <label for="dateBirth" class="required">Data de nascimento</label>
+                                            <input type="text" class="form-control" name="dateBirth" placeholder="__/__/____"  ng-model="usuario.dateBirth" ng-required="true" ui-date-mask  ng-pattern="/^\d{2}/\d{2}/\d{4}$/">
+                                            <div ng-messages="userRegister.dateBirth.$error">
                                                 <div ng-message="pattern" class="error">
                                                     Preencha a data de nascimento corretamente
                                                 </div>
                                         		</div>
-                                            <div ng-if="userRegister.dataNascimento.$invalid && userRegister.dataNascimento.$dirty" class="error">
+                                            <div ng-if="userRegister.dateBirth.$invalid && userRegister.dateBirth.$dirty" class="error">
                                                 Data de nascimento inválida
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="sexo">Sexo</label>
-                                            <select class="form-control" name="sexo" ng-model="usuario.sexo" ng-init="usuario.sexo = 'M'">
-                                                <option value="M">Masculino</option>
-                                                <option value="F">Feminino</option>
+                                            <label for="sex">Sexo</label>
+                                            <select class="form-control" name="sex" ng-model="usuario.sex" ng-init="usuario.sex = 'male'">
+                                                <option value="male">Masculino</option>
+                                                <option value="Female">Feminino</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="col-sm-12 col-md-6">
                                         <div class="form-group">
-                                            <label for="telefone">Telefone</label>
-                                            <input type="text" class="form-control" name="telefone" placeholder="(__)____-____" ng-model="usuario.telefone" ui-br-phone-number ng-pattern="/^((\(\d{2}\) ?)|(\d{2}-))?\d{4,5}-\d{4}$/">
-                                            <div ng-messages="userRegister.telefone.$error">
+                                            <label for="phone">Telefone</label>
+                                            <input type="text" class="form-control" name="phone" placeholder="(__)____-____" ng-model="usuario.phone" ui-br-phone-number ng-pattern="/^((\(\d{2}\) ?)|(\d{2}-))?\d{4,5}-\d{4}$/">
+                                            <div ng-messages="userRegister.phone.$error">
                                                 <div ng-message="pattern" class="error">
                                                     Preencha o telefone corretamente
                                                 </div>
@@ -114,49 +114,33 @@
                                     <div class="col-sm-4">
                                         <div class="form-group">
                                             <label for="cep">CEP</label>
-                                            <input type="text" class="form-control" name="cep" placeholder="_____-___" ng-model="usuario.cep" ui-br-cep-mask>
+                                            <input type="text" class="form-control" name="cep" placeholder="_____-___" ng-model="usuario.address.cep" ui-br-cep-mask>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-10">
                                         <div class="form-group">
-                                            <label for="endereco">Endereço</label>
-                                            <input type="text" class="form-control" name="endereco" placeholder="Digite seu endereço" ng-model="usuario.endereco">
+                                            <label for="street">Endereço</label>
+                                            <input type="text" class="form-control" name="street" placeholder="Digite seu endereço" ng-model="usuario.address.street">
                                         </div>
                                     </div>
                                     <div class="col-sm-2">
                                       <div class="form-group">
-                                          <label for="numero">Número</label>
-                                          <input type="text" class="form-control" name="numero" placeholder="_____" ng-model="usuario.numero" ui-number-mask="0">
+                                          <label for="number">Número</label>
+                                          <input type="text" class="form-control" name="number" placeholder="_____" ng-model="usuario.address.number" ui-number-mask="0">
                                       </div>
                                     </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="complemento">Complemento</label>
-                                    <input type="text" class="form-control" name="complemento" placeholder="Digite o complemento" ng-model="usuario.complemento">
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-10">
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <div class="form-group">
-                                                    <label for="bairro">Bairro</label>
-                                                    <input type="text" class="form-control" name="bairro" placeholder="Digite o bairro" ng-model="usuario.bairro">
+                                                    <label for="city">Cidade</label>
+                                                    <input type="text" class="form-control" name="city" placeholder="Digite a cidade" ng-model="usuario.address.city">
                                                 </div>
                                             </div>
-                                            <div class="col-sm-6">
-                                                <div class="form-group">
-                                                    <label for="cidade">Cidade</label>
-                                                    <input type="text" class="form-control" name="cidade" placeholder="Digite a cidade" ng-model="usuario.cidade">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-2">
-                                        <div class="form-group">
-                                            <label for="estado">Estado</label>
-                                            <input type="text" class="form-control" name="estado" placeholder="__" ui-br-ie-mask='selectedUF' ng-model="usuario.estado">
                                         </div>
                                     </div>
                                 </div>
@@ -204,24 +188,19 @@
                                 <tbody>
                                     <tr ng-repeat="(key, usuario) in usuarios | filter:busca">
                                         <th scope="row">{{key}}</th>
-                                        <td>{{usuario.nome}}</td>
+                                        <td>{{usuario.name}}</td>
                                         <td>{{usuario.email}}</td>
                                         <td>{{usuario.cpf | cpf}}</td>
-                                        <td>{{usuario.dataNascimento | date : "dd/MM/y"}}</td>
-                                        <td>{{usuario.sexo}}</td>
-                                        <td>{{usuario.telefone | telefone}}</td>
+                                        <td>{{usuario.dateBirth | date : "dd/MM/y"}}</td>
+                                        <td ng-if="usuario.sex == 'male'">Masc.</td>
+                                        <td ng-if="usuario.sex == 'Female'">Fem.</td>
+                                        <td>{{usuario.phone | telefone}}</td>
                                         <td>
                                             <i ng-click="delete(usuario)" class="icon-remove text-center" onclick="confirm('Você tem certeza que quer remover esse usuário?')">+</i>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
-                            <h3 class="form-item-title">Objetos mostrando todas as Informações cadastradas</h3>
-                            <ul class="list-group">
-                                <li class="list-group-item" ng-repeat="usuario in usuarios | filter:busca">
-                                    {{usuario}}
-                                </li>
-                            </ul>
                         </div>
                     </div>
                 </div>
