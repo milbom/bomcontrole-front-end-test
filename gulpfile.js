@@ -29,6 +29,7 @@ var paths = {
     './node_modules/ui-select/dist/select.js',
     './node_modules/angular-input-masks/releases/angular-input-masks-standalone.js',
     './node_modules/angular-ui-notification/dist/angular-ui-notification.js',
+    './node_modules/angular-messages/angular-messages.js'
   ],
   appJs: [
     './app/app.js',

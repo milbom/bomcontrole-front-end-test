@@ -13,13 +13,12 @@
 }
 
 .icon-remove {
-    background: #dc3545;
-    border-radius: 18px;
     line-height: 1;
-    color: #FFF;
+    color: #dc3545;
     font-weight: 700;
-    font-size: 18px;
-    display: block;
+    font-size: 22px;
+    display: inline-block;
+    vertical-align: middle;
     width: 18px;
     height: 18px;
     -webkit-transform: rotate(45deg);
@@ -28,13 +27,23 @@
 }
 
 .icon-remove:hover {
-   background: #00BC9C;
    text-decoration: none;
    cursor: pointer;
-   color: #FFF;
+   color: #00BC9C;
 }
 
 .jumbotron p {
     font-size: 12px;
     margin-bottom: 0;
+}
+
+.required:after {
+    content: "*";
+    margin-left: 3px;
+    color: #dc3545;
+    font-size: 17px;
+}
+
+.error {
+    color: #dc3545;
 }

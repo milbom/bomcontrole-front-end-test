@@ -41,5 +41,11 @@
                     }
                 });
       			};
+
+            $scope.add = function (usuario) {
+        				$scope.usuarios.push(angular.copy(usuario));
+        				delete $scope.usuario;
+        				$scope.userRegister.$setPristine();
+      			};
         }]);
 })();

@@ -7,6 +7,7 @@
         'ui.bootstrap',
         'ui.select',
         'ngSanitize',
+        'ngMessages',
         'ui.utils.masks',
         'ui-notification',
     ]);
