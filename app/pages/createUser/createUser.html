@@ -1,31 +1,3 @@
-<header>
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluent">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-                    aria-controls="navbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">
-                    <img height="25" src="bc_logo.png" alt="">
-                </a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">Home</a>
-                    </li>
-                    <li class="active">
-                        <a href="#/create-user">Cadastro de Usuário</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
-
 <div class="container"ng-app="bomControle">
     <div class="page-test-front-end" ng-controller="createUserController">
         <div class="jumbotron">
@@ -114,7 +86,12 @@
                                     <div class="col-sm-4">
                                         <div class="form-group">
                                             <label for="cep">CEP</label>
-                                            <input type="text" class="form-control" name="cep" placeholder="_____-___" ng-model="usuario.address.cep" ui-br-cep-mask>
+                                            <input type="text" class="form-control" name="cep" placeholder="_____-___" ng-model="usuario.address.cep" ui-br-cep-mask ng-pattern="/^\d{5}-\d{3}$/">
+                                            <div ng-messages="userRegister.cep.$error">
+                                                <div ng-message="pattern" class="error">
+                                                    Preencha o CEP corretamente
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
