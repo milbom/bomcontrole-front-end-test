@@ -55,7 +55,7 @@
                                         <div class="form-group">
                                             <label for="sex">Sexo</label>
                                             <select class="form-control" name="sex" ng-model="usuario.sex" ng-init="usuario.sex = 'male'">
-                                                <option value="male">Masculino</option>
+                                                <option value="male" ng-selected="defaultOption">Masculino</option>
                                                 <option value="Female">Feminino</option>
                                             </select>
                                         </div>
@@ -173,7 +173,7 @@
                                         <td ng-if="usuario.sex == 'Female'">Fem.</td>
                                         <td>{{usuario.phone | telefone}}</td>
                                         <td>
-                                            <i ng-click="delete(usuario)" class="icon-remove text-center" onclick="confirm('Você tem certeza que quer remover esse usuário?')">+</i>
+                                            <i ng-click="delete(usuario)" class="icon-remove text-center">+</i>
                                         </td>
                                     </tr>
                                 </tbody>

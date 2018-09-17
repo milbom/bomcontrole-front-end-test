@@ -6,6 +6,8 @@ var $ = require('auto-require')(requireOptions);
 var concat = require('gulp-concat');
 var sourcemaps = require('gulp-sourcemaps');
 var concatCss = require('gulp-concat-css');
+var uglify = require('gulp-uglify');
+var cleanCss = require('gulp-clean-css');
 
 var paths = {
   appDependencesCss: [
@@ -41,6 +43,7 @@ var paths = {
 $.gulp.task('concat-dependences-css', function () {
   return $.gulp.src(paths.appDependencesCss)
     .pipe(concatCss('dependences.css'))
+    .pipe(cleanCss())
     .pipe($.gulp.dest('./public/css'))
     .pipe($.browserSync.stream());
 });
@@ -50,6 +53,7 @@ $.gulp.task('concat-dependences-js', function () {
   return $.gulp.src(paths.appDependencesJs)
     .pipe(sourcemaps.init())
     .pipe(concat('dependences.js'))
+    .pipe(uglify())
     .pipe(sourcemaps.write())
     .pipe($.gulp.dest('./public/js'));
 });
@@ -58,6 +62,7 @@ $.gulp.task('concat-app-js', function () {
   return $.gulp.src(paths.appJs)
     .pipe(sourcemaps.init())
     .pipe(concat('app.js'))
+    .pipe(uglify())
     .pipe(sourcemaps.write())
     .pipe($.gulp.dest('./public/js'));
 });

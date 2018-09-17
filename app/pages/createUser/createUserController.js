@@ -12,18 +12,25 @@
             });
 
             $scope.delete = function (usuario) {
-                $.each($scope.usuarios, function(i){
-                    if($scope.usuarios[i].name === usuario.name) {
-                        $scope.usuarios.splice(i,1);
-                        return false;
-                    }
-                });
+                var isConfirmed = confirm("Você tem certeza que quer remover " + usuario.name.toUpperCase() + "?");
+                if(isConfirmed) {
+                    $.each($scope.usuarios, function(i){
+                        if($scope.usuarios[i].name === usuario.name) {
+                            $scope.usuarios.splice(i,1);
+                            return false;
+                        }
+                    });
+                }
       			};
 
             $scope.add = function (usuario) {
+                if (usuario.sex == undefined) {
+                    usuario.sex = 'male';
+                }
         				$scope.usuarios.push(angular.copy(usuario))
         				delete $scope.usuario;
         				$scope.userRegister.$setPristine();
+                $scope.defaultOption = true;
       			};
         }]);
 })();
