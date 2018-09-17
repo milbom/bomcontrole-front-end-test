@@ -47,3 +47,7 @@
 .error {
     color: #dc3545;
 }
+
+.panel-body {
+    overflow-x: scroll;
+}

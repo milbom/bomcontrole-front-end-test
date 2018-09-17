@@ -152,7 +152,6 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th scope="col"></th>
                                         <th scope="col">Nome</th>
                                         <th scope="col">E-mail</th>
                                         <th scope="col">CPF</th>
@@ -163,8 +162,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr ng-repeat="(key, usuario) in usuarios | filter:busca">
-                                        <th scope="row">{{key}}</th>
+                                    <tr ng-repeat="usuario in usuarios | filter:busca">                                        
                                         <td>{{usuario.name}}</td>
                                         <td>{{usuario.email}}</td>
                                         <td>{{usuario.cpf | cpf}}</td>
