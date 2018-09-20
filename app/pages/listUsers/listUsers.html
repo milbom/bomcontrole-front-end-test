@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        
+        <div class="col-md-10">
+            <h1>Usuários</h1>
+            
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label for="search">Buscar:</label>
+                        <input type="text" class="form-control" name="search" ng-model="search" />
+                    </div>
+                </div>
+                
+            </div>
+            
+            <table class="table">
+                <thead>
+                    <tr scope="row">
+                        <td scope="col">Nome</td>
+                        <td scope="col">Telefone</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="user in users | filter:search" scope="row">
+                        <td scope="col">{{user.name}}</td>
+                        <td scope="col">{{user.phone}}</td>
+                        <td scope="col"><button class="btn btn-danger" ng-click="remove(user)">Deletar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-2"></div>
+        
+    </div>
+</div>
