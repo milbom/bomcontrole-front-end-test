@@ -9,5 +9,6 @@
         'ngSanitize',
         'ui.utils.masks',
         'ui-notification',
+        'angular.filter'
     ]);
 })();

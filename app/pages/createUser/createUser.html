@@ -1,1 +1,70 @@
-<h1>Crie o Formulário de cadastro de usuario aqui.</h1>
+<div class="container-fluent create-user-front-end">
+    <div class="jumbotron">
+        <div class="row form-group">
+            <div class="col-md-3 col-md-offset-0">
+                <label>Nome*</label>
+                <input type="text" class="form-control" ng-model="entity.name">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-3 col-md-offset-0">
+                <label>Dt. Nascimento*</label>
+                <input type="text" class="form-control" ng-model="entity.dateBirth">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-3 col-md-offset-0">
+                <label>Sexo</label>
+                <select class="form-control" ng-model="entity.sex" ng-selected="$first">
+                    <option value="Female">Mulher</option>
+                    <option value="male">Homem</option>
+                </select>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-3 col-md-offset-0">
+                <label>CPF*</label>
+                <input type="text" class="form-control" ng-model="entity.cpf">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-3 col-md-offset-0">
+                <label>E-mail*</label>
+                <input type="text" class="form-control" ng-model="entity.email">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-3 col-md-offset-0">
+                <label>Telefone</label>
+                <input type="text" class="form-control" ng-model="entity.phone">
+            </div>
+        </div>
+        <div class="row form-group">
+                <div class="col-md-3 col-md-offset-0">
+                    <label>Rua</label>
+                    <input type="text" class="form-control" ng-model="entity.address">
+                </div>
+            </div>             
+        <div class="row form-group">
+            <div class="col-md-1">
+                <label>Número</label>
+                <input type="text" class="form-control" ng-model="entity.address">
+            </div>
+            <div class="col-md-2">
+                    <label>Cep</label>
+                    <input type="text" class="form-control" ng-model="entity.address">
+                </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-3 col-md-offset-0">
+                <label>Cidade</label>
+                <input type="text" class="form-control" ng-model="entity.address">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-3 col-md-offset-0">
+                <input type="button" class="btn btn-default" value="Cadastrar" ng-disabled="verificarCamposObrigatorios()">
+            </div>
+        </div>
+    </div>
+</div>
