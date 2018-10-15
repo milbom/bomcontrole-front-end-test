@@ -26,12 +26,16 @@
                 }
 
                 if(msg.length > 0){
-                    console.log("false");
                     return true;
                 }else{
-                    console.log("true");
                     return false;
                 }
-            }            
+            }    
+            
+            $scope.addUser = function(){
+                alert("Usuário cadastrado com sucesso");
+                $scope.entity = {};
+                $scope.entity.sex = "Female";
+            }
         }]);
 })();
