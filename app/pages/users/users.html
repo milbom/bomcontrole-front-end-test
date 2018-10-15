@@ -1,0 +1,42 @@
+<div class="container-fluent users-front-end">
+    <div class="jumbotron">
+        <div class="row form-group">
+            <div class="col-md-3 col-md-offset-0">
+                <label>Pesquisar</label>
+                <input type="text" class="form-control" ng-model="search">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-0">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>#</th>
+                            <th>Nome</th>
+                            <th>Dt. Nascimento</th>
+                            <th>Sexo</th>
+                            <th>CPF</th>
+                            <th>E-mail</th>
+                            <th>Telefone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in list.users | filterBy: ['name','email']: search">
+                            <th>{{item.id}}</th>
+                            <td>
+                                    <i class="glyphicon glyphicon-trash" ng-click="removeUser($index)"></i>
+                            </td>
+                            <td>{{item.name}}</td>
+                            <td>{{item.dateBirth}}</td>
+                            <td>{{item.sex}}</td>
+                            <td>{{item.cpf | cpf}}</td>
+                            <td>{{item.email}}</td>
+                            <td>{{item.phone | telefone}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

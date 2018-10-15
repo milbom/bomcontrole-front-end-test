@@ -1,0 +1,9 @@
+.create-user-front-end{
+    padding: 20px;
+}
+.create-user-front-end .jumbotron{
+  background: transparent;
+}
+.create-user-front-end .btn-success{
+    background: #00BC9C;
+}
