@@ -7,3 +7,8 @@
 .create-user-front-end .btn-success{
     background: #00BC9C;
 }
+
+.create-user-front-end .required::after {    
+    content: '*';
+    color: rgb(235, 19, 19);
+}

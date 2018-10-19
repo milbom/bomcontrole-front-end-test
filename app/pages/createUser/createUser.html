@@ -1,21 +1,21 @@
-<div class="container-fluent create-user-front-end">
-    <div class="jumbotron">
+<form method="POST" action="" class="container-fluent create-user-front-end">
+    <fieldset class="jumbotron">
         <div class="row form-group">
             <div class="col-md-3 col-md-offset-0">
-                <label>Nome*</label>
-                <input type="text" class="form-control" ng-model="entity.name">
+                <label for="name" class="required">Nome</label>
+                <input id="name" type="text" class="form-control" ng-model="entity.name">
             </div>
         </div>
         <div class="row form-group">
             <div class="col-md-3 col-md-offset-0">
-                <label>Dt. Nascimento*</label>
-                <input type="text" class="form-control" ng-model="entity.dateBirth">
+                <label for="dateBirth" class="required">Dt. Nascimento</label>
+                <input id="dateBirth" type="text" class="form-control" ng-model="entity.dateBirth">
             </div>
         </div>
         <div class="row form-group">
             <div class="col-md-3 col-md-offset-0">
-                <label>Sexo</label>
-                <select class="form-control" ng-model="entity.sex" ng-selected="$first">
+                <label for="sex">Sexo</label>
+                <select id="sex" class="form-control" ng-model="entity.sex" ng-selected="$first">
                     <option value="Female">Mulher</option>
                     <option value="male">Homem</option>
                 </select>
@@ -23,42 +23,42 @@
         </div>
         <div class="row form-group">
             <div class="col-md-3 col-md-offset-0">
-                <label>CPF*</label>
-                <input type="text" class="form-control" ng-model="entity.cpf">
+                <label for="cpf" class="required">CPF</label>
+                <input id="cpf" type="text" class="form-control" ng-model="entity.cpf">
             </div>
         </div>
         <div class="row form-group">
             <div class="col-md-3 col-md-offset-0">
-                <label>E-mail*</label>
-                <input type="text" class="form-control" ng-model="entity.email">
+                <label for="email" class="required">E-mail</label>
+                <input id="email" type="text" class="form-control" ng-model="entity.email">
             </div>
         </div>
         <div class="row form-group">
             <div class="col-md-3 col-md-offset-0">
-                <label>Telefone</label>
-                <input type="text" class="form-control" ng-model="entity.phone">
+                <label for="phone">Telefone</label>
+                <input id="phone" type="text" class="form-control" ng-model="entity.phone">
             </div>
         </div>
         <div class="row form-group">
                 <div class="col-md-3 col-md-offset-0">
-                    <label>Rua</label>
-                    <input type="text" class="form-control" ng-model="entity.address.street">
+                    <label for="street">Rua</label>
+                    <input id="street" type="text" class="form-control" ng-model="entity.address.street">
                 </div>
             </div>             
         <div class="row form-group">
             <div class="col-md-1">
-                <label>Número</label>
-                <input type="text" class="form-control" ng-model="entity.address.number">
+                <label for="addressNumber">Número</label>
+                <input id="addressNumber" type="text" class="form-control" ng-model="entity.address.number">
             </div>
             <div class="col-md-2">
-                    <label>Cep</label>
-                    <input type="text" class="form-control" ng-model="entity.address.cep">
+                    <label for="addressCep">Cep</label>
+                    <input id="addressCep" type="text" class="form-control" ng-model="entity.address.cep">
                 </div>
         </div>
         <div class="row form-group">
             <div class="col-md-3 col-md-offset-0">
-                <label>Cidade</label>
-                <input type="text" class="form-control" ng-model="entity.address.city">
+                <label for="addressCity">Cidade</label>
+                <input id="addressCity" type="text" class="form-control" ng-model="entity.address.city">
             </div>
         </div>
         <div class="row form-group">
@@ -66,5 +66,5 @@
                 <input type="button" class="btn btn-default" value="Cadastrar" ng-disabled="verificarCamposObrigatorios()" ng-click="addUser()">
             </div>
         </div>
-    </div>
-</div>
+    </fieldset>
+</form>
