@@ -10,6 +10,7 @@ var gulp = require('gulp');
 var htmlmin = require('gulp-htmlmin');
 var jsminify = require('gulp-minify');
 
+
 var paths = {
   appDependencesCss: [
     './node_modules/animate.css/animate.css/',
@@ -37,18 +38,21 @@ var paths = {
     './app/app.js',
     './app/**/**/**/*.js',
   ],
+  publicJs: [
+    './public/js/app.js',
+    './public/js/dependences.js',
+  ],
   appHtml: './app/**/**/**/**/*.html',
 };
 
+
 gulp.task('jsminify', function () {
-  gulp.src('./public/js/*.js')
-    .pipe(sourcemaps.init())
-    .pipe(jsminify())
-    .pipe(sourcemaps.write())
+  gulp.src(paths.publicJs)    
+    .pipe(jsminify())    
     .pipe(gulp.dest('./public/js'))
 });
 
-gulp.task('minify', () => {
+gulp.task('minify', function () {
   return gulp.src('*.html')
     .pipe(sourcemaps.init())
     .pipe(htmlmin({ collapseWhitespace: true }))
