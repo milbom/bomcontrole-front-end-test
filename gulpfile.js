@@ -6,6 +6,8 @@ var $ = require('auto-require')(requireOptions);
 var concat = require('gulp-concat');
 var sourcemaps = require('gulp-sourcemaps');
 var concatCss = require('gulp-concat-css');
+var gulp = require('gulp');
+var htmlmin =   require('gulp-htmlmin');
 
 var paths = {
   appDependencesCss: [
@@ -36,6 +38,12 @@ var paths = {
   ],
   appHtml: './app/**/**/**/**/*.html',
 };
+
+gulp.task('minify', () => {
+  return gulp.src('*.html')
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest('./public'));
+});
 
 $.gulp.task('concat-dependences-css', function () {
   return $.gulp.src(paths.appDependencesCss)
@@ -70,6 +78,8 @@ $.gulp.task('serve', [
   'concat-dependences-js',
   'concat-app-js',
   'concat-dependences-css',
+  'minify',
+  
 ], function () {
 
   $.gulp.watch(paths.appJs, ['concat-app-js']);
