@@ -26,6 +26,7 @@
     "gulp-less": "~3.3.0",
     "gulp-lesshint": "^4.0.0",
     "gulp-lesshint-checkstyle-reporter": "^1.1.0",
+    "gulp-minify": "^3.1.0",
     "gulp-processhtml": "~1.1.0",
     "gulp-purifycss": "^0.2.0",
     "gulp-rename": "~1.2.2",
