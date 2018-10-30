@@ -6,7 +6,8 @@ var $ = require('auto-require')(requireOptions);
 var concat = require('gulp-concat');
 var sourcemaps = require('gulp-sourcemaps');
 var concatCss = require('gulp-concat-css');
-
+var cssmin = require('gulp-cssmin');
+var uglify = require('gulp-uglify');
 var paths = {
   appDependencesCss: [
     './node_modules/animate.css/animate.css/',
@@ -36,6 +37,20 @@ var paths = {
   ],
   appHtml: './app/**/**/**/**/*.html',
 };
+
+$.gulp.task('build-css', ['concat-dependences-css'], function () {
+  return $.gulp.src('./public/css/*.css')
+    .pipe(cssmin())
+    .pipe($.gulp.dest('./public/css'));
+});
+
+$.gulp.task('build-js', ['concat-dependences-js', 'concat-app-js'], function () {
+  return $.gulp.src('./public/js/*.js')
+    .pipe(sourcemaps.init())
+    .pipe(uglify())
+    .pipe(sourcemaps.write())
+    .pipe($.gulp.dest('./public/js'));
+});
 
 $.gulp.task('concat-dependences-css', function () {
   return $.gulp.src(paths.appDependencesCss)
@@ -67,12 +82,11 @@ $.gulp.task('browser-sync-reload', function (done) {
 });
 
 $.gulp.task('serve', [
-  'concat-dependences-js',
-  'concat-app-js',
-  'concat-dependences-css',
+  'build-js',
+  'build-css',
 ], function () {
 
-  $.gulp.watch(paths.appJs, ['concat-app-js']);
+  $.gulp.watch(paths.appJs, ['build-js']);
   $.gulp.watch('./public/js/app.js', ['browser-sync-reload']);
   $.gulp.watch('./app/**/**/**/*.css', ['browser-sync-reload']);
 
