@@ -1,44 +1,32 @@
 (function () {
     "use strict";
     angular.module('bomControle')
-        .controller('showUsersController', ['$scope', function ($scope) {
+        .controller('showUsersController', ['$scope', 'userHttpServices', function ($scope, userHttpServices) {
 
-          $scope.addUser = function() {
-            $scope.user.$setDirty();
+          userHttpServices.getUsers()
+            .then(function(data) {
+              $scope.users = data.data;
+            })
+            .catch(function (err) {
+                console.log(err);
+          });
 
-            if($scope.user.$invalid)
-              return;
-
-            var user = {
-              id: new Date().getTime(),
-              name: $scope.newUser.name,
-              dateBirth: $scope.newUser.dateBirth,
-              sex: $scope.newUser.sex,
-              cpf: $scope.newUser.cpf,
-              email: $scope.newUser.email,
-              phone: $scope.newUser.phone,
-              cellphone: $scope.newUser.cellphone,
-              address: {
-                street: $scope.newUser.street,
-                number: $scope.newUser.number,
-                city: $scope.newUser.city,
-                cep: $scope.newUser.cep,
+          $scope.removeUser = function(user){
+              var confirmacao = confirm('Você tem certeza?');
+              if (confirmacao) {
+                  for (var i = 0; i < $scope.users.length; i++) {
+                      if ($scope.users[i].id == user.id) {
+                          $scope.users.splice(i, 1);
+                          return;
+                      }
+                  }
               }
-            };
+          };
 
-            $scope.newUser = {};
-            $scope.user.$setPristine();
-            $scope.user.$setUntouched();
-
-            console.log(user);
-            // Manda um post para a API
-
-            //  UI-Alert
-            //
-            // MOSTRAR O ALERT QUE A AÇÃO DEU CERTO
-            //
-            //
-          }
+          $scope.ordernarPor = function (campo) {
+            $scope.criterioDeOrdenacao = campo;
+            $scope.direcaoDaOrdenacao = !$scope.direcaoDaOrdenacao;
+          };
 
         }]);
 })();

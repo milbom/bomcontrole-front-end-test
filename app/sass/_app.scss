@@ -1,8 +1,3 @@
-$primary-color: #11998e;
-$secondary-color: #38ef7d;
-
-$destaque: tomato;
-
 $error: tomato;
 
 $first-background: #11998e;
@@ -14,11 +9,16 @@ body, .bg-gradient{ background: $first-background; background: -webkit-linear-gr
 
 .jumbotron{ background: $first-jumbotrom;  margin-top: 5em; }
 
-.destaque{ background-color:$destaque; }
-
 .input-error{ color: $error; }
 .ng-invalid.ng-touched{ border-color: $error; }
 
 .control-label{ margin-top:1em; }
 
 .second-bg{background-color:$second-background; font-weight: bold;}
+
+a{
+  color:$second-background;
+  &:hover{
+    color:$first-background;
+  }
+}
