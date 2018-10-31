@@ -12,7 +12,7 @@
           });
 
           $scope.removeUser = function(user){
-              var confirmacao = confirm('Você tem certeza?');
+              var confirmacao = confirm('Você tem certeza que deseja excluir o '+user.name+'?');
               if (confirmacao) {
                   for (var i = 0; i < $scope.users.length; i++) {
                       if ($scope.users[i].id == user.id) {
