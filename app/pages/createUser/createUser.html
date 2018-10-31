@@ -1,1 +1,143 @@
-<h1>Crie o Formulário de cadastro de usuario aqui.</h1>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluent">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                aria-controls="navbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <img height="25" src="bc_logo.png" alt="">
+            </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li class="active">
+                    <a href="#/create-user">Cadastrar usuários</a>
+                </li>
+                <li>
+                    <a href="#/show-users">Visualizar usuários</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container add-user">
+  <div class="jumbotron">
+    <h2>Cadastro de usuários</h2>
+    <form class="form-vertical">
+
+      <div class="row">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="First name">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Last name">
+        </div>
+      </div>
+
+    </form>
+    <!-- <form name="usuario" class="form-horizontal" ng-submit="criarUsuario()" novalidate>
+
+      <div class="form-group">
+          <label class="control-label col-sm-2" for="nome">Nome</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" ng-model="novoUsuario.nome" required>
+          </div>
+          <div ng-if="(usuario.nome.$touched || usuario.$submitted) && usuario.nome.$invalid">
+              <span ng-if="usuario.nome.$error.required">Este campo é obrigatório</span>
+          </div>
+      </div>
+
+      <div class="form-group">
+          <label class="control-label col-sm-2" for="nascimento">Data de nascimento</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" placeholder="Data de nascimento" ng-model="novoUsuario.nascimento" ui-date-mask="DD-MM-YYYY" required>
+          </div>
+          <div ng-if="(usuario.nascimento.$touched || usuario.$submitted) && usuario.nascimento.$invalid">
+              <span ng-if="usuario.nascimento.$error.required">Este campo é obrigatório</span>
+          </div>
+      </div>
+
+      <div class="form-group">
+          <label class="control-label col-sm-2" for="sexo">Sexo</label>
+          <div class="col-sm-10">
+            <select class="form-control"  ng-init="novoUsuario.sexo = 'female'" name="gender" ng-model="novoUsuario.sexo">
+                <option value="male">Masculino</option>
+                <option value="female" selected>Feminino</option>
+            </select>
+            <!-- <input type="text" class="form-control" id="sexo" name="sexo" placeholder="Sexo" ng-model="novoUsuario.sexo" required> --
+          </div>
+          <div ng-if="(usuario.sexo.$touched || usuario.$submitted) && usuario.sexo.$invalid">
+              <span ng-if="usuario.sexo.$error.required">Este campo é obrigatório</span>
+          </div>
+      </div>
+
+      <div class="form-group">
+          <label class="control-label col-sm-2" for="cpf">CPF</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF" ng-model="novoUsuario.cpf" ui-br-cpf-mask required>
+          </div>
+          <div ng-if="(usuario.cpf.$touched || usuario.$submitted) && usuario.cpf.$invalid">
+              <span ng-if="usuario.cpf.$error.required">Este campo é obrigatório</span>
+          </div>
+      </div>
+
+      <div class="form-group">
+          <label class="control-label col-sm-2" for="email">E-mail</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="email" name="email" placeholder="E-mail" ng-model="novoUsuario.email" required>
+          </div>
+          <div ng-if="(usuario.email.$touched || usuario.$submitted) && usuario.email.$invalid">
+              <span ng-if="usuario.email.$error.required">Este campo é obrigatório</span>
+          </div>
+      </div>
+
+      <div class="form-group">
+          <label class="control-label col-sm-2" for="telefone">Telefone</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Telefone" ng-model="novoUsuario.telefone" required>
+          </div>
+          <div ng-if="(usuario.telefone.$touched || usuario.$submitted) && usuario.telefone.$invalid">
+              <span ng-if="usuario.telefone.$error.required">Este campo é obrigatório</span>
+          </div>
+      </div>
+
+      <div class="form-group">
+          <label class="control-label col-sm-2" for="celular">Celular</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="celular" name="celular" placeholder="Celular" ng-model="novoUsuario.celular" required>
+          </div>
+          <div ng-if="(usuario.celular.$touched || usuario.$submitted) && usuario.celular.$invalid">
+              <span ng-if="usuario.celular.$error.required">Este campo é obrigatório</span>
+          </div>
+      </div>
+
+      <div class="form-group">
+          <label class="control-label col-sm-2" for="endereco">Endereço</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Endereço" ng-model="novoUsuario.endereco" required>
+          </div>
+          <div ng-if="(usuario.endereco.$touched || usuario.$submitted) && usuario.endereco.$invalid">
+              <span ng-if="usuario.endereco.$error.required">Este campo é obrigatório</span>
+          </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" ng-disabled="usuario.$invalid">Salvar</button>
+        </div>
+      </div>
+
+    </form> -->
+  </div>
+</div>
+
+
+
+<!-- /container -->

@@ -34,7 +34,7 @@ var paths = {
     './node_modules/angular-ui-notification/dist/angular-ui-notification.js',
   ],
   appSass: [
-    './app/**/**/*.scss',
+    './app/**/**/**/*.scss',
   ],
   appJs: [
     './app/app.js',
