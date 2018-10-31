@@ -31,6 +31,7 @@
     "gulp-purifycss": "^0.2.0",
     "gulp-rename": "~1.2.2",
     "gulp-rev": "^7.0.0",
+    "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "~1.9.1",
     "gulp-sync": "~0.1.4",
     "gulp-uglify": "^2.0.1",
@@ -38,7 +39,8 @@
     "imagemin-svgo": "^5.2.1",
     "jshint-stylish": "~2.2.1",
     "map-stream": "0.0.7",
-    "merge-stream": "~1.0.1"
+    "merge-stream": "~1.0.1",
+    "node-sass": "^4.9.4"
   },
   "dependencies": {
     "angular": "~1.6.1",
