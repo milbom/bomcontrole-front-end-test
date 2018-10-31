@@ -110,6 +110,7 @@ $.gulp.task('serve', [
 
   $.gulp.watch(paths.appJs, ['build:js']);
   $.gulp.watch(paths.appSass, ['build:sass']);
+  $.gulp.watch('./app/sass/*.scss', ['build:sass']);
   $.gulp.watch('./public/js/app.js', ['browser-sync-reload']);
   $.gulp.watch('./app/**/**/**/*.css', ['browser-sync-reload']);
   $.gulp.watch('./app/**/**/**/*.scss', ['browser-sync-reload']);
