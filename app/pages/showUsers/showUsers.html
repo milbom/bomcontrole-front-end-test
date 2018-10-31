@@ -1,0 +1,65 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluent">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                aria-controls="navbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <img height="25" src="bc_logo.png" alt="">
+            </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#/create-user">Cadastrar usuários</a>
+                </li>
+                <li class="active">
+                    <a href="#/show-users">Visualizar usuários</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container add-user">
+  <div class="jumbotron">
+    <h2>
+      Listagem de usuários
+    </h2>
+    <input class="form-control" type="text" ng-model="criterioDeBusca" placeholder="Quem você está procurando? " >
+    <br>
+    <table ng.show="users.lenght > 0" class="table table-striped">
+      <tr>
+        <th><a href="" ng-click="ordernarPor('name')">Nome</a></th>
+        <th><a href="" ng-click="ordernarPor('dateBirth')">Nascimento</a></th>
+        <th><a href="" ng-click="ordernarPor('sex')">Sexo</a></th>
+        <th><a href="" ng-click="ordernarPor('cpf')">CPF</a></th>
+        <th><a href="" ng-click="ordernarPor('email')">E-mail</a></th>
+        <th><a href="" ng-click="ordernarPor('phone')">Telefone</a></th>
+        <th><a href="" ng-click="ordernarPor('address.street')">Endereço</a></th>
+        <th></th>
+      </tr>
+      <tr ng-repeat="user in users | filter:criterioDeBusca | orderBy: criterioDeOrdenacao:direcaoDaOrdenacao">
+        <td>{{user.name}}</td>
+        <td>{{user.dateBirth}}</td>
+        <td><span ng-show="user.sex == 'male'">Masculino</span><span ng-show="user.sex != 'male'">Feminino</span></td>
+        <td>{{user.cpf}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.phone}}</td>
+        <td>{{user.address.street}}</td>
+        <td><button class="btn btn-danger" ng-click="removeUser(user)">Deletar</button></td>
+      </tr>
+    </table>
+
+  </div>
+</div>
+
+
+
+<!-- /container -->

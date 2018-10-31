@@ -1,0 +1,19 @@
+$error: tomato;
+
+$first-background: #11998e;
+$second-background: #38ef7d;
+
+$first-jumbotrom: #FFF;
+
+body, .bg-gradient{ background: $first-background; background: -webkit-linear-gradient(to right, $second-background, $first-background); background: linear-gradient(to right, $second-background, $first-background); }
+
+.jumbotron{ background: $first-jumbotrom;  margin-top: 5em; }
+
+.input-error{ color: $error; }
+.ng-invalid.ng-touched{ border-color: $error; }
+
+.control-label{ margin-top:1em; }
+
+.second-bg{background-color:$second-background; font-weight: bold;}
+
+a, .text-destaque{ color:$second-background; &:hover{ color:$first-background; }}

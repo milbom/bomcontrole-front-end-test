@@ -1,1 +1,152 @@
-<h1>Crie o Formulário de cadastro de usuario aqui.</h1>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluent">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                aria-controls="navbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <img height="25" src="bc_logo.png" alt="">
+            </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li class="active">
+                    <a href="#/create-user">Cadastrar usuários</a>
+                </li>
+                <li>
+                    <a href="#/show-users">Visualizar usuários</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container add-user">
+  <div class="jumbotron">
+    <h2>Cadastro de usuários</h2>
+    <form name="user" class="form-vertical" ng-submit="addUser()" novalidate>
+
+      <div class="row">
+
+        <div class="col-sm-4">
+          <label class="control-label col-sm-2" for="name">Nome*</label>
+          <div ng-if="(user.name.$touched || user.$submitted) && user.name.$invalid">
+            <span class="input-error">Qual é o seu nome? </span>
+          </div>
+          <input type="text" class="form-control" placeholder="Fulano de tal" id="name" name="name" ng-model="newUser.name" required>
+        </div>
+
+        <div class="col-sm-2">
+          <label class="control-label col-sm-2" for="sex">Sexo*</label>
+          <div ng-if="(user.sex.$touched || user.$submitted) && user.sex.$invalid">
+            <span class="input-error">Qual é o seu sexo? </span>
+          </div>
+          <select class="form-control" name="sex" ng-model="newUser.sex" ng-init="newUser.sex='male'" required>
+              <option value="male" selected>Masculino</option>
+              <option value="female">Feminino</option>
+          </select>
+        </div>
+
+        <div class="col-sm-6">
+          <label class="control-label col-sm-2" for="email">E-mail*</label>
+          <div ng-if="(user.email.$touched || user.$submitted) && user.email.$invalid">
+            <span class="input-error">Qual é o seu e-mail? </span>
+          </div>
+          <input type="email" class="form-control" placeholder="seunome@example.com" id="email" name="email" ng-model="newUser.email" required>
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-3">
+          <label class="control-label col-sm-2" for="dateBirth">Nascimento*</label>
+          <div ng-if="(user.dateBirth.$touched || user.$submitted) && user.dateBirth.$invalid">
+            <span class="input-error">Quando você nasceu? </span>
+          </div>
+          <input type="text" class="form-control" placeholder="00/00/0000" id="dateBirth" name="dateBirth" ng-model="newUser.dateBirth" ui-date-mask="DD-MM-YYYY" required>
+        </div>
+
+        <div class="col-sm-3">
+          <label class="control-label col-sm-2" for="cpf">CPF*</label>
+          <div ng-if="(user.cpf.$touched || user.$submitted) && user.cpf.$invalid">
+            <span class="input-error">Digite um CPF válido! </span>
+          </div>
+          <input type="text" class="form-control" placeholder="000.000.000-00" id="cpf" name="cpf" ng-model="newUser.cpf" ui-br-cpf-mask required>
+        </div>
+
+        <div class="col-sm-3">
+          <label class="control-label col-sm-2" for="phone">Telefone</label>
+          <div ng-if="(user.phone.$touched || user.$submitted) && user.phone.$invalid">
+            <span class="input-error">Qual é o seu telefone? </span>
+          </div>
+          <input type="text" class="form-control" placeholder="(00) 0000-0000" id="phone" name="phone" ng-model="newUser.phone" ui-br-phone-number>
+        </div>
+
+        <div class="col-sm-3">
+          <label class="control-label col-sm-2" for="cellphone">Celular</label>
+          <div ng-if="(user.cellphone.$touched || user.$submitted) && user.cellphone.$invalid">
+            <span class="input-error">Qual é o seu celular? </span>
+          </div>
+          <input type="text" class="form-control" placeholder="(00) 00000-0000" id="cellphone" name="cellphone" ng-model="newUser.cellphone" ui-br-phone-number>
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-3">
+          <label class="control-label col-sm-2" for="addresscep">CEP</label>
+          <div ng-if="(user.addresscep.$touched || user.$submitted) && user.addresscep.$invalid">
+            <span class="input-error">Qual é o seu CEP?</span>
+          </div>
+          <input type="text" class="form-control" placeholder="00000-000" id="addresscep" name="addresscep" ng-model="newUser.address.cep" ui-br-cep-mask>
+        </div>
+
+        <div class="col-sm-3">
+          <label class="control-label col-sm-2" for="addresscity">Cidade</label>
+          <div ng-if="(user.addresscity.$touched || user.$submitted) && user.addresscity.$invalid">
+            <span class="input-error">Qual a sua cidade? </span>
+          </div>
+          <input type="text" class="form-control" placeholder="São Paulo" id="addresscity" name="addresscity" ng-model="newUser.address.city">
+        </div>
+
+        <div class="col-sm-4">
+          <label class="control-label col-sm-2" for="addressstreet">Endereço</label>
+          <div ng-if="(user.addressstreet.$touched || user.$submitted) && user.addressstreet.$invalid">
+            <span class="input-error">Qual é o seu endereço? </span>
+          </div>
+          <input type="text" class="form-control" placeholder="Av. Paulista" id="addressstreet" name="addressstreet" ng-model="newUser.address.street">
+        </div>
+
+        <div class="col-sm-2">
+          <label class="control-label col-sm-2" for="addressnumber">Número</label>
+          <div ng-if="(user.addressnumber.$touched || user.$submitted) && user.addressnumber.$invalid">
+            <span class="input-error">Qual é o seu número? </span>
+          </div>
+          <input type="number" class="form-control" placeholder="1000" id="addressnumber" name="addressnumber" ng-model="newUser.address.number">
+        </div>
+
+      </div>
+
+      <div class="row">
+          <div class="col-sm-offset-9 col-sm-3">
+            <br>
+            <button type="submit" class="btn second-bg col-sm-12" ng-disabled="user.$invalid">Adicionar</button>
+          </div>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+
+
+<!-- /container -->
