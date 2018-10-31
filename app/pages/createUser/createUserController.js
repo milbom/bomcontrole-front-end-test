@@ -31,13 +31,10 @@
             $scope.user.$setUntouched();
 
             console.log(user);
-            // Manda um post para a API
 
-            //  UI-Alert
-            //
-            // MOSTRAR O ALERT QUE A AÇÃO DEU CERTO
-            //
-            //
+            // Manda um post para a API
+            // UI-Alert com o status da solicitação
+            
           }
 
         }]);
