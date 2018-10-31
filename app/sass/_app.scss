@@ -16,9 +16,4 @@ body, .bg-gradient{ background: $first-background; background: -webkit-linear-gr
 
 .second-bg{background-color:$second-background; font-weight: bold;}
 
-a{
-  color:$second-background;
-  &:hover{
-    color:$first-background;
-  }
-}
+a, .text-destaque{ color:$second-background; &:hover{ color:$first-background; }}
