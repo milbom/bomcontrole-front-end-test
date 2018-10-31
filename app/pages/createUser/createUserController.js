@@ -1,9 +1,11 @@
 (function () {
     "use strict";
     angular.module('bomControle')
-        .controller('createUserController', '$scope' [function ($scope) {
+        .controller('createUserController', ['$scope', function ($scope) {
 
           $scope.addUser = function() {
+            console.log("laranjaais");
+            
             $scope.user.$setDirty();
 
             if($scope.user.$invalid)

@@ -3,18 +3,22 @@ $secondary-color: #38ef7d;
 
 $destaque: tomato;
 
+$error: tomato;
+
 $first-background: #11998e;
 $second-background: #38ef7d;
 
 $first-jumbotrom: #FFF;
 
-body{
-  background: $first-background;
-  background: -webkit-linear-gradient(to right, $second-background, $first-background);
-  background: linear-gradient(to right, $second-background, $first-background);
-}
+body, .bg-gradient{ background: $first-background; background: -webkit-linear-gradient(to right, $second-background, $first-background); background: linear-gradient(to right, $second-background, $first-background); }
 
-.jumbotron{
-  background: $first-jumbotrom;
-  margin-top: 5em;
-}
+.jumbotron{ background: $first-jumbotrom;  margin-top: 5em; }
+
+.destaque{ background-color:$destaque; }
+
+.input-error{ color: $error; }
+.ng-invalid.ng-touched{ border-color: $error; }
+
+.control-label{ margin-top:1em; }
+
+.second-bg{background-color:$second-background; font-weight: bold;}
