@@ -4,8 +4,6 @@
         .controller('createUserController', ['$scope', function ($scope) {
 
           $scope.addUser = function() {
-            console.log("laranjaais");
-            
             $scope.user.$setDirty();
 
             if($scope.user.$invalid)
